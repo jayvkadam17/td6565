@@ -1,0 +1,101 @@
+Sure! I can help you with those programs. Let's go through each one and provide the JavaScript code for each of them.
+
+1. Reverse String:
+```javascript
+function reverseString(input) {
+  setTimeout(() => {
+    const reversed = input.split('').reverse().join('');
+    console.log(reversed);
+  }, 2000);
+}
+
+const input = "Hello, World!";
+reverseString(input);
+```
+
+2. Random Number Generator with Delay and Progress Indication:
+```javascript
+function generateRandomNumber(delay) {
+  let remainingTime = delay;
+  console.log(`Generating random number in ${remainingTime} seconds...`);
+
+  const countdown = setInterval(() => {
+    remainingTime--;
+    console.log(`Time remaining: ${remainingTime} seconds...`);
+
+    if (remainingTime === 0) {
+      clearInterval(countdown);
+      const randomNumber = Math.floor(Math.random() * 100); // Modify as per your requirements
+      console.log(`Random number generated: ${randomNumber}`);
+    }
+  }, 1000);
+}
+
+const delayInSeconds = 3;
+generateRandomNumber(delayInSeconds);
+```
+
+3. Build a feature for Store's Inventory:
+```javascript
+const storeInventory = {
+  item1: 10,  // Price in USD
+  item2: 20,
+  item3: 30
+};
+
+const convertedInventory = Object.fromEntries(
+  Object.entries(storeInventory).map(([item, price]) => [item, price * 80])
+);
+
+console.log(convertedInventory);
+```
+
+4. Filtering and Capitalizing: Books Published After 2010 with Author Names:
+```javascript
+const books = [
+  { title: "Book 1", author: "author 1", year: 2008 },
+  { title: "Book 2", author: "author 2", year: 2012 },
+  { title: "Book 3", author: "author 3", year: 2014 },
+  { title: "Book 4", author: "author 4", year: 2009 },
+];
+
+const filteredBooks = books
+  .filter(book => book.year >= 2010)
+  .map(book => ({ ...book, author: book.author.toUpperCase() }));
+
+console.log(filteredBooks);
+```
+
+5. URL validation:
+```javascript
+function validateURL(url) {
+  const regex = /^(http:\/\/|https:\/\/)[\w\d!@#$%^&*()]+?\.[a-zA-Z]+$/;
+
+  if (regex.test(url)) {
+    console.log("Valid URL");
+  } else {
+    console.log("Invalid URL");
+  }
+}
+
+const url = "http://www.example.com";
+validateURL(url);
+```
+
+6. LinkedIn Profile URL Validator:
+```javascript
+function validateLinkedInURL(url) {
+  const regex = /^https:\/\/www\.linkedin\.com\/in\/[\w\d-]{5,30}[a-zA-Z\d]$/;
+
+  if (regex.test(url)) {
+    console.log("Valid LinkedIn profile URL");
+  } else {
+    console.log("Invalid LinkedIn profile URL");
+  }
+}
+
+const url = "https://www.linkedin.com/in/johndoe123";
+validateLinkedInURL(url);
+```
+
+Please note that the code provided above is for illustration purposes and might need to be adapted to fit your specific use case or requirements.
